@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class="navbar navbar-dark bg-dark box-shadow">
+                <div class="container d-flex justify-content-between">
+                    <a href="/" class="navbar-brand d-flex align-items-left">
+                        <strong>Simple Content Based Recommender System</strong>
+                    </a>
+                    <div class="dropdown">
+                        <div class="navbar-brand align-items-left btn dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">
+                            Kelompok 1
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Hilman Abdan (1301174690)</a>
+                            <a class="dropdown-item" href="#">Muhammad Ihza Mahendra (1301174682)</a>
+                            <a class="dropdown-item" href="#">Nurani Solechah (1301173148)</a>
+                            <a class="dropdown-item" href="#">Wisnu Adi Nurcahyo (1301160479)</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Pilih Buku Favorit Anda</h1>
+                <form method="POST">
+                    <select name="book_title" class="custom-select" id="inputGroupSelect01">
+                        {% for data in datas %}
+                            <option value="{{ data }}">{{ data }}</option>
+                        {% endfor %}
+                    <p>
+                    <input type="submit" class="btn btn-primary my-2">
+                    </p>
+                </form>              
+            </div>
+        </section>
+        {% if chosen %}
+            <h1 class="jumbotron-heading text-center">Rekomendasi Buku Berdasarkan "{{ chosen }}"</h1>
+        {% endif %}
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                {% for table in tables %}
+                
+                    <div class="col-md-3">
+                        <div class="card mb-3 box-shadow">
+                            <img class="card-img-top" src="{{table[1]}}" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">{{table[0]}}</p>
+                                <p class="card-text">{{table[2]}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
