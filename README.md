@@ -4,6 +4,12 @@ We're building a simple Recommender System using Content-Based Filtering Method 
 the contributor for backend : zaza-ipynb  
 contributor for integrating backend to UI : mystald
 
+There are required libraries which is pandas, flask, sklearn :  
+```
+pip install sklearn  
+pip install flask  
+pip install pandas
+```
 
 There are several file available in this repository :
 1. RecSys.ipynb file for the raw backend
