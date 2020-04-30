@@ -17,8 +17,10 @@ There are several file available in this repository :
 3. main.py for UI architecture with folder dependencies
 4. cbrs.py is the compressed code from RecSys.ipynb
 
-To see the recommender system with UI simply run main.py until it doesn't show any error like this :  
+To see the recommender system with UI simply run main.py until it doesn't show any error like this :
+
 ![alt text](https://github.com/zaza-ipynb/RecommenderSystem/blob/master/img/run.PNG)  
 
 and open localhost:5000 at your browser and it will be like this :  
+
 ![alt text](https://github.com/zaza-ipynb/RecommenderSystem/blob/master/img/messageImage_1588254802538.jpg)
